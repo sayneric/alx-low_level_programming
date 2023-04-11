@@ -37,12 +37,12 @@ int _atoi(char *s)
 }
 
 /**
- * main - multiplies two numbers entered as command line arguments
+ * main - Prints the product of two numbers.
  * and prints the result
  * @argc: number of arguments
  * @argv: array of arguments
  *
- * return: 0 (success), 1 (Error)
+ * return: 0 if successful, 1 otherwise
  */
 
 int main(int argc, char *argv[])

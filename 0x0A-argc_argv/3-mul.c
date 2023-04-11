@@ -5,12 +5,12 @@
  * _atoi - converts a string to integer
  * @s: string to be converted
  *
- * Return: the int convewrted from the string
+ * Return: the result of the string that was  conveted to integer
  */
 
 int _atoi(char *s)
 {
-	int i = 0, v = 0, p = 0, k = 0, digit = 0;
+	int i = 0, v = 0, p = 0, k = 0, digit = 0, len = 0;
 
 	while (s[len] != '\0')
 		len++;
@@ -37,7 +37,8 @@ int _atoi(char *s)
 }
 
 /**
- * main - multiplies two numbers
+ * main - multiplies two numbers entered as command line arguments
+ * and prints the result
  * @argc: number of arguments
  * @argv: array of arguments
  *
@@ -48,7 +49,7 @@ int main(int argc, char *argv[])
 {
 	int result, num1, num2;
 
-	if (argc < 3 || argv > 3)
+	if (argc != 3)
 	{
 		printf("Error\n");
 		return (1);

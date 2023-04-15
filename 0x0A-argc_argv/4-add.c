@@ -13,10 +13,9 @@
 int check_num(char *str)
 {
 	/*declaration of varaibles*/
-	unsigned int count;
+	unsigned int count = 0;
 
-	count = 0;
-	while (count < strlen(str)) /*count string*/
+	while (str[count]) /*count string*/
 	{
 		if (!isdigit(str[count])) /*check if str are digit*/
 		{
@@ -41,6 +40,11 @@ int main(int argc, char *argv[])
 	int count, str_to_int, sum = 0;
 
 	count = 0;
+	if (argc == 1) /* if no arguments were passed , print 0 and return*/
+	{
+		printf("0\n");
+		return (0);
+	}
 	while (count < argc) /*goes through the whole array*/
 	{
 		if (check_num(argv[count]))
@@ -51,7 +55,7 @@ int main(int argc, char *argv[])
 		/* condition if one of the number contains symbols that are not digits*/
 		else
 		{
-			printf("Error\n");
+			printf("Error");
 			return (1);
 		}
 		count++;

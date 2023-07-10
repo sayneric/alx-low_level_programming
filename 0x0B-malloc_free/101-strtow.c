@@ -37,7 +37,7 @@ int count_word(char *s)
 char **strtow(char *str)
 {
 	char **matrix, *tmp;
-	int i, u = 0, len = 0, words, a = 0, start, end;
+	int i, j, u = 0, len = 0, words, a = 0, start, end;
 
 	while (*(str + len))
 		len++;
@@ -59,12 +59,12 @@ char **strtow(char *str)
 				tmp = (char *) malloc(sizeof(char) * (a + 1));
 				if (tmp == NULL)
 					return (NULL);
-				while (start < end)
-					*tmp++ = str[start++];
-				*tmp = '\0';
-				matrix[u] = tmp - a;
+				for (j = start; j < end; j++)
+					tmp[j - start] = str[j];
+				tmp[end - start] = '\0';
+				matrix[u] = tmp;
 				u++;
-				u = 0;
+				a = 0;
 			}
 		}
 		else if (a++ == 0)

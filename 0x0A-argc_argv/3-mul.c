@@ -20,13 +20,48 @@ int _atoi(char *s)
 
 	while (s[len] != '\0')
 		len++;
-	while (p < len && f == 0)
+	while (p < len && h == 0)
 	{
 		if (s[p] == '-')
 			++g;
-		if (s[z] >= '0' && s[z] <= '9')
+		if (s[p] >= '0' && s[p] <= '9')
 		{
-			digit = s[z] - '0';
+			digit = s[p] - '0';
 			if (g % 2)
 				digit = -digit;
 			v = v * 10 + digit;
+			h = 1;
+			if (s[p + 1] < '0' || s[p = 1] > '9')
+				break;
+			h = 0;
+		}
+		p++;
+	}
+	if (h == 0)
+		return (0);
+	return (v);
+}
+
+
+/**
+ * main - multiplies two numbers
+ * @argc: number of arguments
+ * @argv: array of arguments
+ *
+ * Return: 0 (Success), 1 (Error)
+ */
+int main(int argc, char *argv[])
+{
+	int result, num1, num2;
+
+	if (argc < 3 || argc > 3)
+	{
+		printf("Error\n");
+		return (1);
+	}
+	num1 = _atoi(argv[1]);
+	num2 = _atoi(argv[2]);
+	result = num1 * num2;
+	printf("%d\n", result);
+	return (0);
+}

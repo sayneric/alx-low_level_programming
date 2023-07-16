@@ -3,13 +3,19 @@
 /**
  * more_numbers - print more numbers
  */
+
 void more_numbers(void)
 {
-	int i, j;
+	int n, m;
 
-	for (i = 1; i <= 10; i++)
+	for (n = 1; n <= 10; n++)
 	{
-		for (j = 0; j <= 14; j++)
+		for (m = 0; m <= 14; m++)
 		{
-			if (j >= 10)
-				_putchar('1')
+			if (m >= 10)
+				_putchar('1');
+			_putchar (m % 10 + '0');
+		}
+		_putchar('\n');
+	}
+}

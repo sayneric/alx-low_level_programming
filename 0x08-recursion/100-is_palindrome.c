@@ -21,19 +21,19 @@ int is_palindrome(char *s)
 /**
  * check_pal - checks the characters recursively for palindrome
  * @s: string to check
- * @i: iterator
- * @len: length of the string
+ * @start: start of string
+ * @end: end the string
  *
  * Return: 0 if it is not a palindrome, 1 otherwise
  */
 
-int check_pal(char *s, int i, int len)
+int check_pal(char *s, int start, int end)
 {
-	if (*(s + i) != *(s + len - 1))
-		return (0);
-	if (i >= len)
+	if (start >= end)
 		return (1);
-	return (check_pal(s, i + 1, len - 1));
+	if (s[start] != s[end])
+		return (0);
+	return (check_pal(s, start + 1, end - 1));
 }
 
 
